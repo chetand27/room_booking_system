@@ -1,0 +1,50 @@
+<!-- Page Content -->
+<div class="container">
+
+  <!-- Page Header -->
+  <div class="row">
+      <div class="col-lg-12">
+          <h2 class="page-header">All Rooms</h2>
+      </div>
+  </div>
+
+  <div class="row">
+      <div class="col-lg-3">
+          <div class='input-group date' id = "booking_date">
+             <input class="form-control disabled-field" placeholder="Booking Date" type="text" id="select_booking_date" name= "booking_date">
+             <span class="input-group-addon">
+                <span class="glyphicon glyphicon-calendar blue-calendar"></span>
+             </span>
+          </div>        
+          <br>
+          <%= render :partial => "/shared/flashmessages" %>
+      </div>
+  </div>
+  <!-- /.row -->
+
+  <!-- Category Rcategory_wise_roomsow -->
+  <div class="row rooms_details_by_categories <% if @available_rooms_by_categories == [] %>hidden<% end %>">
+    <% @available_rooms_by_categories.each do |category, rooms| %>       
+      <div class="col-lg-12">
+        <h3 class="page-header"><%= rooms.count %> <%= category.gsub("_", " ").capitalize %> Rooms</h3>  
+        <!-- Room Row --> 
+        <div class="row only_room_details">      
+          <% rooms.each do |room|%>    
+            <div class="col-md-3 portfolio-item">
+                <a href="#">
+                    <h3>Room Details</h3> 
+                    <h4>
+                        <span>Room Number : <small><%= room.room_number %></small></span><br>
+                        <span>Facility: <small><%= room.description %></small></span><br>
+                        <span>Price: <small><%= room.charged_per_night %>/night</small></span>
+                    </h4>
+                </a>
+                <%= link_to "Book Room", new_room_booking_path(room.id), { class: "btn btn-primary" } %>
+            </div>
+          <% end %>
+        </div>
+     </div>
+  <% end %>
+  <!-- /.row -->
+  <hr>
+</div>

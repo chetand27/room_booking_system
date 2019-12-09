@@ -1,0 +1,58 @@
+<!-- Page Header -->
+<div class="row">
+    <div class="col-lg-12">
+        <h2 class="page-header text-center">Booking Details</h2>
+        <%= render :partial => "/shared/flashmessages" %>
+    </div>
+</div>
+<section>
+   <div class="body-inner no-padding col-lg-11 col_centered">
+      <table class="table table-bordered table-striped table-hover acenter" id="datatable_league">
+         <tr>
+            <th>key</th>
+            <td>value</td>
+         </tr>
+
+         <tr>
+            <th>User Name</th>
+            <td><%= booking_user_name(@booking.user) %></td>
+         </tr>
+
+         <tr>
+            <th>Phone Number</th>
+            <td><%= @booking.user.phone_number %></td>
+         </tr>
+
+         <tr>
+            <th>Room Number</th>
+            <td><%= @booking.room.room_number %></td>
+         </tr>
+
+         <tr>
+            <th>Room Category</th>
+            <td><%= @booking.room.category.capitalize %> Rooms</td>
+         </tr>
+
+         <tr>
+            <th>Room Status</th>
+            <td><%= @booking.room.status.capitalize %></td>
+         </tr>
+
+         <tr>
+            <th>Room Price</th>
+            <td><%= @booking.room.charged_per_night %></td>
+         </tr>
+
+         <tr>
+            <th>Booked Dates</th>
+            <td><%= formatted_booking_date(@booking) %></td>
+         </tr>
+      </table>
+   </div>
+</section>
+
+<div class="row">
+    <div class="col-lg-11 col_centered">
+      <%= link_to 'Cancel Booking', room_booking_path(@booking.room.id, @booking.id), method: 'delete' ,:class => "btn btn-primary"%>
+    </div>
+</div>

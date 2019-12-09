@@ -1,0 +1,58 @@
+<section id="main">
+    <div class="wrapper wrapper-content animated fadeInRight">
+       <div class="row">
+        <div class="col-lg-10 col_centered">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title text-center">
+                    <h5><%= params[:action].capitalize %> Booking</h5>
+                </div>
+
+                <%= render :partial => "/shared/flashmessages" %>
+
+                <div class="ibox-content">
+              
+                  <%=form_for @booking, :html => {:class => "form-horizontal"}, :url => @url do |f|%>
+
+                    <div class="field form-group">
+                           <%= f.label :booked_from, class: "control-label col-md-2"  %>                
+                        <div class='col-sm-8'> 
+                            <div class='input-group date' id='booked_from'>
+                               <%= f.text_field :booked_from, class: "form-control", placeholder: "Booking From Date", required: true %>
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="hr-line-dashed"></div>
+                    
+                    <div class="field form-group">
+                           <%= f.label :booked_upto, class: "control-label col-md-2"  %>                
+                        <div class='col-sm-8'> 
+                            <div class='input-group date' id="booked_upto">
+                                <%= f.text_field :booked_upto, class: "form-control", placeholder: "Booking Upto Date", required: true %>
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <%= f.text_field :user_id, class: "form-control hidden", value: current_user.id %>
+
+                    <div class="hr-line-dashed"></div>
+
+                    <div class="form-group">
+                      <div class="col-sm-4 col_centered">
+                          <%= link_to 'Cancel', root_path ,:class => "btn btn-white"%>
+                          <button class="btn btn-primary" id="submit">Save Booking</button>
+                      </div>
+                    </div>
+                  <%end%>
+                </div>
+            </div>         
+        </div>
+    </div>
+</div>  
+</section>

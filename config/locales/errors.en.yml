@@ -1,0 +1,23 @@
+en:
+  errors:
+    user:
+      password:
+        presence: 'Please make sure, `Email` must be present.'
+      email:
+        presence: 'Please make sure, `Email` must be present.'
+      email:
+        not_found: 'Email not found.'
+      password:
+        invalid: 'Your Password is invalid.'
+    booking:
+      not_found: 'The Booking you were looking for could not be found.'
+      already_booked: 'This room is already booked for selected date, please check other availables rooms.'
+    room:
+      send_params: 'Please give booking_date and/or room_type.'
+  success:
+    user:
+      logout:
+        done: 'You logout from app successfully.'
+    booking:   
+      created: 'Your room is booked successfully.'
+      cancelled: 'Booking cancelled Successfully.'

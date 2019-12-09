@@ -1,0 +1,76 @@
+
+.advocate_heading{
+ font-size: 16px;
+ font-weight: 600;
+ letter-spacing: 3px;
+}
+
+.outer {
+ display: table;
+ height: 100%;
+ width: 100%;
+}
+
+.middle {
+ display: table-cell;
+ vertical-align: middle;
+}
+
+.navbar-fixed-top{
+	background-color: #000 !important;
+}
+
+.ibox-tools {
+    margin: 20px 0px 30px !important;
+}
+
+.btn-album{
+    padding: 10px 30px !important;
+    font-size: 15px !important;
+    letter-spacing: 2px !important;
+}
+
+.col_centered{
+	float: none !important;
+	margin: 0 auto !important;
+}
+
+.img_fixed{
+	height: 270px;
+}
+
+
+h3,h4,h4 span{
+  color:#000!important;
+}
+
+h4 small {
+	color: #606060 !important;
+	font-size:13px; 
+}
+
+#required_name,#required_file{
+   color: #FB3A3A;
+   font-size:13px;
+}
+
+#new_user input.error{
+    border:1.5px solid #FB3A3A !important; 
+  }
+#new_user label.error {
+      color:#FB3A3A !important;
+      font-size: 12px !important;
+      font-weight: 600 !important;
+      margin:2% auto 0%;
+      font-family: "open-sans-regular";
+      letter-spacing: 1px;
+}
+
+.invalid_statement{
+      color:#FB3A3A !important;
+      font-size: 12px !important;
+      font-weight: 600 !important;
+      font-family: "open-sans-regular";
+      letter-spacing: 1px;
+      display: none;    
+}

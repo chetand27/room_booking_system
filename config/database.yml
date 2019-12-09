@@ -1,0 +1,9 @@
+development:
+  database: room_booking_system_dev
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  username: postgres
+  password: ''
+  host: localhost
+  port: 5432

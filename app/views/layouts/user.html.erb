@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html class="no-js">
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<title>RoomBookingSystem</title>
+
+	  <%= stylesheet_link_tag  "user"%>
+	  <%= javascript_include_tag "user"%>
+
+	  <%= csrf_meta_tags %>
+	</head>
+	<body style="background-color:#fff;">
+	   <div id="wrapper">        
+	      <%= render :partial => "/shared/header" %>
+	      <%= yield  %>               
+	      <%= render :partial => "/shared/footer" %>
+	    </div>
+	 </body>
+</html>

@@ -1,0 +1,32 @@
+<!-- Page Content -->
+<div class="container">
+
+  <!-- Page Header -->
+  <div class="row">
+      <div class="col-lg-12">
+          <h2 class="page-header text-center"><%= @bookings.count %> Bookings</h2>
+          <%= render :partial => "/shared/flashmessages" %>
+      </div>
+  </div>
+  <!-- /.row -->
+
+  <!-- Category Rcategory_wise_roomsow -->
+<div class="row <% if @available_rooms_by_categories == [] %>hidden<% end %>"> 
+  <!-- Room Row --> 
+  <div class="row">      
+    <% @bookings.each do |booking|%>    
+      <div class="col-md-3 portfolio-item">
+          <h3> Booking Detals</h3> 
+          <h4>
+              <span>Booking Date : <small><%= formatted_booking_date(booking) %></small></span><br>
+              <span>User Name: <small><%= booking_user_name(booking.user) %></small></span><br>
+              <span>Phone Number: <small><%= booking.user.phone_number %></small></span><br>
+              <span>Room Number: <small><%= booking.room.room_number %></small></span>
+          </h4>
+          <%= link_to "Details of Booking", room_booking_path(booking.room.id, booking.id), { class: "btn btn-primary" } %>
+      </div>
+    <% end %>
+  <!-- /.row -->
+  </div>
+  <hr>
+</div>
